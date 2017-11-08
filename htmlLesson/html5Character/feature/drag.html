@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>拖放例子</title>
+		<script>
+			//允许被放置
+			function allowDrop(event) {
+				event.preventDefault(); //调用 preventDefault() 来避免浏览器对数据的默认处理
+			}
+			//放置时触发
+			function drop(event) {
+				event.preventDefault();
+				var data = event.dataTransfer.getData('Text');
+				event.target.appendChild(document.getElementById(data))
+			}
+			//当元素被拖动时，存放需要移动的数据
+			function drag(event) {
+				event.dataTransfer.setData("Text", event.target.parentElement.id); //注意参数二是否获得移动元素的id
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<div id="droptarget" style="height:100px;width:100px;border:1px solid red;"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<p id="srcE" ondragstart="drag(event)">Hello </p>
+	</body>
+
+</html>

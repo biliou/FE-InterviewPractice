@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Geolocation 地理定位 调用百度地图</title>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=VMv2WLznhqj90x5ep3SVtGBml9m8Ebek"></script>
+
+		<body>
+			<div id="allmap"></div>
+		</body>
+
+		<script type="text/javascript">
+					var map = new BMap.Map("allmap");
+					var point = new BMap.Point(116.331398, 39.897445);
+					map.centerAndZoom(point, 12);
+
+					function myFun(result) {
+						var cityName = result.name;
+						map.setCenter(cityName);
+						alert("当前定位城市:" + cityName);
+					}
+					var myCity = new BMap.LocalCity();
+					myCity.get(myFun);
+		</script>
+	</head>
+
+</html>
