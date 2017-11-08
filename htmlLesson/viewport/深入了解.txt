@@ -1,0 +1,13 @@
+1.设置width等于device-width是实际做了什么？
+把一个普通的在PC上开发的HTML页面直接放手机上，你会发现不管多大的页面都可以在小小的手机屏幕上显示，但是图文都会显示的特别小。
+试验：使用document.documentElement.clientWidth获取手机页面宽度都是980px。
+历史：Viewport起源于苹果，现在被大多数浏览器支持。
+关于viewport有两个概念visual viewport（视觉上的窗口，可以理解为设备自己的宽度）跟layout viewport（viewport创建的虚拟窗口）。
+原理：viewport meta标签会创建一个虚拟窗口，这个虚拟窗口分辨率接近桌面显示器。所以大多数情况下，使用
+<meta name="viewport" content="width=device-width" /> 标签，就可以让我们页面里的图文显示是正常的。
+
+常用设置
+1.minimum-scale=1.0, maximum-scale=1.0 最大与最小缩放比例都设为1.0 = user-scalable=no
+
+2.<!-- 设置屏幕宽度为设备宽度，禁止用户手动调整缩放 -->
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" /> 
