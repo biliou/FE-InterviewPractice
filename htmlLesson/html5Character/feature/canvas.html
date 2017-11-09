@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Canvas 画布</title>
+	</head>
+
+	<body>
+		<canvas id="myCanvas" width="200" height="100"></canvas>
+	</body>
+	<script type="text/javascript">
+		var c = document.getElementById("myCanvas");
+		var cxt = c.getContext("2d"); // 内建的 HTML5 对象
+
+		//画矩形
+		cxt.fillStyle = "#FF0000";
+		cxt.fillRect(0, 0, 150, 75);
+
+		//画线条
+		cxt.moveTo(10, 10);
+		cxt.lineTo(150, 50);
+		cxt.lineTo(10, 50);
+		cxt.stroke();
+
+		//画圆形
+		cxt.fillStyle = "#003E3E";
+		cxt.beginPath();
+		cxt.arc(70, 18, 15, 0, Math.PI * 2, true);
+		cxt.closePath();
+		cxt.fill();
+
+		//渐变
+		var grd = cxt.createLinearGradient(175, 50, 200, 50);
+		grd.addColorStop(0, "#FF0000");
+		grd.addColorStop(1, "#00FF00");
+		cxt.fillStyle = grd;
+		cxt.fillRect(175, 50, 200, 50);
+	</script>
+
+</html>
