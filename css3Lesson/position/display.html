@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>display元素使用</title>
+		<style>
+			.hasBackground{
+				background: #6c0;
+			}
+			
+			#spanBlock{
+				display:block
+			}
+			
+			#div2{
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 例子一：使行内元素变为块级元素 -->
+		<div class="hasBackground">我是块级元素</div>
+		<span id="spanBlock">我是行内元素</span>行内元素外的内容
+		
+		<div id="vicki">我是块级元素1</div>
+		<div id="div2" class="hasBackground">我是块级元素2</div>块级元素2外的内容
+	</body>
+</html>
