@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>float 浮动</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.pBox{
+				width: 600px;
+				border:10px darkred solid;
+			}
+			
+			.box1 {
+				width: 300px;
+				height: 100px;
+				background: #6666FF;
+				float: left;
+			}
+			
+			.box2 {
+				width: 300px;
+				height: 100px;
+				background: #FF9966;
+				float: left;
+			}
+			
+			/* 添加了clear 以后 父元素的border会将子元素的位置算上*/
+			.clear{
+				clear: both;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="pBox">
+			<div class="box1"></div>
+			<div class="box2"></div>
+			<div class="clear"></div>
+		</div>
+	</body>
+
+</html>
