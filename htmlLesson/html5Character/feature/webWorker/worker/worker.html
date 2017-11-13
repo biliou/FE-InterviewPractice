@@ -21,7 +21,7 @@
 						w = new Worker("demo_workers.js");
 					}
 					w.onmessage = function(event) {
-						document.getElementById("result").innerHTML = event.data;
+						document.getElementById("result").innerHTML = event.data; //获取后台代码传回数据
 					};
 				} else {
 					document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";

@@ -1,0 +1,22 @@
+1.HTML5 有三种存储方案
+	sessionStorage，localStorage，离线存储
+
+2.区别
+	用法：sessionStorage和localStorage 都是采用键值对的形式存储，
+		两者都是通过setItem、getItem、removeItem来实现增删查改
+	
+	意义：1）sessionStorage是会话存储，也就是说 当浏览器关闭之后
+		  sessionStorage也自动清空了；
+		  2）localStorage没有时间上的限制
+		  3） 离线存储用来确保web应用能够在离线情况下使用，通过在
+		  html标签中属性manifest来声明需要缓存的文件
+		  
+3.离线缓存
+	3.1 manifest 用法
+		CACHE / NETWORK / FACKBACK 三个关键字用于不同功能。
+		CACHE 指缓存的资源；
+		NETWORK 指不想缓存的页面；
+		FALLBACK 是指当没有响应时的替代方案，比如我想请求某个页面，但这个页面的服务器挂了，那么，我可以显示另外一个指定的页面；
+		
+	参考网站：
+	http://blog.csdn.net/nideshijian/article/details/53065292
