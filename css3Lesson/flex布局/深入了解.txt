@@ -1,0 +1,18 @@
+1.CSS3布局方面新增了flex布局，传统的布局解决方案依赖display + position + float
+
+2.使用说明
+	2.1 Flex 是Flexible Box弹性布局的意思。通过设置display指定为Flex布局。
+		块级元素 display：flex；行内元素 display：inline-flex。注意设置后，
+		子元素的float、clear和vertical-align会失效。
+	
+	2.2 使用Flex后，会支持Flex对应属性
+	flex-direction 主轴方向
+	flex-wrap	换行后摆放
+	flex-flow	flex-direction + flex-wrap 简写
+	justify-content		主轴上对齐方式
+	align-items		定义项目在交叉轴上如何对齐
+	align-content	定义了多根轴线的对齐方式
+	
+-----------------------------
+flex布局教程：http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
+

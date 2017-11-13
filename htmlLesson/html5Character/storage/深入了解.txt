@@ -17,3 +17,6 @@
 		CACHE 指缓存的资源；
 		NETWORK 指不想缓存的页面；
 		FALLBACK 是指当没有响应时的替代方案，比如我想请求某个页面，但这个页面的服务器挂了，那么，我可以显示另外一个指定的页面；
+		
+	参考网站：
+	http://blog.csdn.net/nideshijian/article/details/53065292

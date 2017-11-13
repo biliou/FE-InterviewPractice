@@ -6,6 +6,12 @@
 		<title>离线缓存</title>
 		<link rel="stylesheet" href="css/index.css" />
 
+	</head>
+
+	<body onload="init()">
+		<img src="img/girl.png" />
+		<p>fsfasfsafs</p>
+		<div id="msg"></div>
 		<script type="text/javascript">
 			//判断浏览器是否能够连接互联网，online表示能够联网，offline表示不能联网；根据浏览器状态自动监听并进行响应【通过断开或开启本地连接进行测试】  
 			window.addEventListener("online", function() {
@@ -31,20 +37,21 @@
 				applicationCache.update();
 			}
 			applicationCache.onupdateready = function() {
-					if(confirm("本地缓存已被更新,需要刷新页面来获取应用程序最新版本")) {
-						//手动更新本地缓存，只能在onupdateready事件触发时调用  
-						applicationCache.swapCache();
-						location.reload();
-					}
+				if(confirm("本地缓存已被更新,需要刷新页面来获取应用程序最新版本")) {
+					//手动更新本地缓存，只能在onupdateready事件触发时调用  
+					applicationCache.swapCache(); //切换成本地最新的缓存环境
+					location.reload();
 				}
-				//与上述写法完全等效  
-				/* applicationCache.addEventListener("updateready",function(){  
-				    if(confirm("本地缓存已被更新,需要刷新页面来获取应用程序最新版本")){  
-				        //手动更新本地缓存，只能在onupdateready事件触发时调用  
-				        applicationCache.swapCache();  
-				        location.reload();  
-				    }  
-				},true); */
+			}
+
+			//与上述写法完全等效
+			/* applicationCache.addEventListener("updateready",function(){  
+			    if(confirm("本地缓存已被更新,需要刷新页面来获取应用程序最新版本")){  
+			        //手动更新本地缓存，只能在onupdateready事件触发时调用  
+			        applicationCache.swapCache();  
+			        location.reload();  
+			    }  
+			},true); */
 
 			/* function test(){  
 			var msg=document.getElementById("msg");  
@@ -69,12 +76,6 @@
 			  
 			} */
 		</script>
-	</head>
-
-	<body onload="init()">
-		<img src="img/girl.png" />
-		<p>fsfasfsafs</p>
-		<div id="msg"></div>
 	</body>
 
 </html>
