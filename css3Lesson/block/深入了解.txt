@@ -1,0 +1,10 @@
+1.html中一切皆为框
+
+
+2.块级元素和行内元素解释
+块级元素：自己占据一行
+行内元素：内容显示在行中
+
+3.html元素归类
+块级元素：h1-h6，p，from，table，列表（ul，ol，li），div，header，footer，aside，
+行内元素：文字样式（b，i，strong），img，input，textarea，select，button，a，label，span
