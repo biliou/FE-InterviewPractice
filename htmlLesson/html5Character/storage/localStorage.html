@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>local Storage</title>
+	</head>
+
+	<body>
+		local Storage: <br>
+		<script>
+			if(localStorage.visit) {
+				localStorage.visit++;
+			} else {
+				localStorage.visit = 0
+			}
+			document.write("用户已经访问第" + localStorage.visit + "次了");
+		</script>
+	</body>
+
+</html>

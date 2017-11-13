@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>web worker 跨页面通信</title>
+	</head>
+
+	<body>
+		<input id="inp" /><input type="button" id="btn" value="发送" />
+		<script>
+			var s = new SharedWorker('findPrime.js');
+			s.port.onmessage = function(e) {
+				console.log(e.data);
+			};
+			btn.onclick = function() {
+				s.port.postMessage(inp.value);
+				inp.value = "";
+			};
+			s.port.start();
+		</script>
+
+	</body>
+
+</html>
