@@ -6,4 +6,11 @@
 
 4.使用flex-box布局，指定justify-content属性为center
 
-5.父元素display设置为table且text-align:center,子元素display设置为tabel-cell,
+5.父元素display设置为table且text-align:center,子元素display设置为tabel-cell
+
+区别：
+1.外层包裹子元素，占据整行，能做到窗口自适应
+2.外层包裹子元素，占据当前内容位置，能做到窗口自适应
+3.外层不包裹子元素，占据整行，能做到窗口自适应
+4.外层包裹子元素，占据当前内容位置，能做到窗口自适应
+5.外层包裹子元素，不是窗口自适应
