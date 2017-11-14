@@ -14,6 +14,7 @@ fixed
 --------------------------
 1.position以后其实会脱离原本的文档流
 2.left、right、top、bottom 需要和position元素一起使用才生效
+3.z-index在使用absolute下使用才有效
 
   ● float - 浮动
 left
