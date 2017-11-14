@@ -8,9 +8,12 @@ none -  此元素不会被显示,并且不在文档流中
   ● position - 定位
 absolute - 绝对定位，元素的位置相对于最近的已定位的祖先元素，脱离文档流
 relative - 相对定位，相对本身的原始位置发生位移且保持文档流，占空间
+static
+fixed
 
 --------------------------
 1.position以后其实会脱离原本的文档流
+2.left、right、top、bottom 需要和position元素一起使用才生效
 
   ● float - 浮动
 left

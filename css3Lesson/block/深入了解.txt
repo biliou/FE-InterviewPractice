@@ -8,3 +8,6 @@
 3.html元素归类
 块级元素：h1-h6，p，from，table，列表（ul，ol，li），div，header，footer，aside，
 行内元素：文字样式（b，i，strong），img，input，textarea，select，button，a，label，span
+
+4.span和div的区别
+div占用一行，span不会占用一行。span如果设置display:block后会变成和div一样。
