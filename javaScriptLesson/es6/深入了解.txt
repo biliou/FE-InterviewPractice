@@ -6,3 +6,5 @@ ECMAScript6是JavaScript的规格，JavaScripte实现了ECMAScript
 	2.2  字符串、数组、正则、对象、函数拓展方法
 	2.3 set，map数据结构 - js Object本质上是键值对的集合（Hash结构），
 			传统上只能用字符串当做建
+	2.4 解决一步回调问题：promise，generator引入
+	3.5 Class和模块
