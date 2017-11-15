@@ -1,0 +1,43 @@
+1.为什么要有promise？
+通过promise优化异步操作。回调函数经常用于异步操作中，会造成回调函数的嵌套。
+promise 通过链式调用的方式使代码更加直观。
+
+2.什么是回调函数？
+被作为函数传递给另一个函数的函数。
+举例：
+$("#btn_1").click(function() {
+  alert("Btn 1 Clicked");
+}); 
+
+3.如何使用
+创建Promise对象
+var promise = new Promise((resolve, reject) => {
+	if(1 < 2) {
+		resolve("success");  //异步完成成功之后执行
+	} else {
+		resolve("failed");	//异步完成失败之后执行
+	}
+})
+
+promise调用
+promise.then(function(){
+  //success
+}).catch(function(){
+  //failure
+})
+
+promise返回值
+在then中return出去的值会是一个Promise对象
+
+
+Promise.all方法用于将多个Promise实例，包装成一个新的Promise实例。
+Promise.all([promise1,promise2,promise3]).then((result) =>{
+	//result[0]
+	//result[1]
+	//result[2]
+})
+
+将现有对象转为Promise对象
+Promise.resolve():
+Promise.reject('foo')
+

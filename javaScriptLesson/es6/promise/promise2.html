@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>promise2</title>
+	</head>
+
+	<body>
+		<script>
+			var promise = new Promise((resolve, reject) => {
+				if(1 < 2) {
+					resolve("success");
+				} else {
+					resolve("failed");
+				}
+			})
+			
+			//promise 方法
+			promise.then((result) => {
+				console.log(result);   
+				if(1 / 0) {
+					console.log(error);
+				}
+			}).catch((e) => {
+				console.log(e);
+			})
+
+			//promise带有返回值，返回值是一个promise对象，有两个属性PromiseStatus和PromiseValue
+			
+			var a = promise.then((result) => {
+				console.log(result);
+				//return出去的是一个promise对象
+				return result;
+			}).catch((e) => {
+				console.log(e);
+			})
+
+			console.log(a)
+		</script>
+	</body>
+
+</html>

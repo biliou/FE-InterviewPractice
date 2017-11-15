@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>promise例子</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function timeout(ms) {
+				return new Promise((resolve, reject) => {
+					setTimeout(reject, ms, 'done');
+					console.log(setTimeout(reject, ms, 'done'));
+				});
+			}
+
+			timeout(100).then((value) => {
+				console.log(value);
+			});
+		</script>
+	</body>
+
+</html>

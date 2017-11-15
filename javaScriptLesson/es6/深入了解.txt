@@ -1,0 +1,8 @@
+1.什么是ECMAScript6？
+ECMAScript6是JavaScript的规格，JavaScripte实现了ECMAScript
+
+2.ECMAScript6有什么新特性？
+	2.1 let,const - 引入局部变量的概念
+	2.2  字符串、数组、正则、对象、函数拓展方法
+	2.3 set，map数据结构 - js Object本质上是键值对的集合（Hash结构），
+			传统上只能用字符串当做建
