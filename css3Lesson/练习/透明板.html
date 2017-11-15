@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>透明板</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				background: url(../../img/二维码.png);
+			}
+			
+			.bg {
+				width: 100%;
+				height: 100%;
+				background: #000000;
+				position: absolute;
+				
+				color:#0000FF;
+				/* 方式一*/
+				opacity:0.3;
+				filter:alpha(opacity:50); 
+				/* 方式二*/
+				/* 只兼容ie9 以上，属于CSS3 ,文字不会透明*/
+				/*background-color: rgba(0,0,0,0.3);*/
+				
+				
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="bg">员阿里</div>
+	</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>常用定位布局</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.header {
+				background: #00FF00;
+				height: 100px;
+			}
+			
+			.section {
+				margin:10px;
+				border: 1px red solid;
+			}
+			
+			.left {
+				width: 20%;
+				height: 500px;
+				background: pink;
+				float: left;
+			}
+			
+			.middle {
+				width: 60%;
+				height: 500px;
+				background: deeppink;
+				float: left;
+			}
+			
+			.right {
+				width: 20%;
+				height: 500px;
+				background: hotpink;
+				float: right;
+			}
+			
+			.clear {
+				clear: both;
+			}
+			
+			.footer {
+				background: #0000FF;
+				height: 300px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="header"></header>
+		<section class="section">
+			<div class="left"></div>
+			<div class="middle"></div>
+			<div class="right"></div>
+			<div class="clear"></div>
+		</section>
+		<footer class="footer"></footer>
+	</body>
+
+</html>

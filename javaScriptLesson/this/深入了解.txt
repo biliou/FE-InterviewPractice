@@ -1,0 +1,70 @@
+1.谁调用这个函数或方法，this就指向谁
+
+2.this情况
+	2.1 普通函数调用
+		function person(){
+        this.name="xl";
+        console.log(this);
+        console.log(this.name);
+    }
+    
+    person();  //输出  window  xl   
+    
+        实际上person是作为全局对象window的一个方法来进行调用的,即window.person();
+	所以这个地方是window对象调用了person方法,那么person函数当中的this即指window
+    
+	2.2 作为方法来调用
+	var name="XL";
+    var person={
+        name:"xl",
+        showName:function(){
+            console.log(this.name);
+        }
+    }
+    person.showName();  //输出  xl
+    //这里是person对象调用showName方法，很显然this关键字是指向person对象的，所以会输出name
+    
+    var showNameA=person.showName;
+    showNameA();    //输出  XL
+    //这里将person.showName方法赋给showNameA变量，此时showNameA变量相当于window对象的一个属性，
+       因此showNameA()执行的时候相当于window.showNameA(),即window对象调用showNameA这个方法，所以this关键字指向window
+	
+	2.3 作为构造函数来调用
+	unction  Person(name){
+        this.name=name;
+    }
+    var personA=Person("xl");
+    console.log(personA.name); // 输出  undefined
+    console.log(window.name);//输出  xl
+    //上面代码没有进行new操作，相当于window对象调用Person("xl")方法，那么this指向window对象，并进行赋值操作window.name="xl".
+    
+    var personB=new Person("xl");
+    console.log(personB.name);// 输出 xl
+    
+	2.4 使用apply/call方法来调用
+	在JS里函数也是对象，因此函数也有方法。这两个方法属于函数的方法。
+	funtion FruitA(n1,n2){
+        this.n1=n1;
+        this.n2=n2;
+        this.change=function(x,y){
+            this.n1=x;
+            this.n2=y;
+        }
+    }
+    
+    var fruitA=new FruitA("cheery","banana");
+    var FruitB={
+        n1:"apple",
+        n2:"orange"
+    };
+    fruitA.change.call(FruitB,"pear","peach"); //若第一个参数为空，默认指向window
+    
+    console.log(FruitB.n1); //输出 pear
+    console.log(FruitB.n2);// 输出 peach
+	
+	
+	2.5 Function.prototype.bind方法
+	2.6 es6箭头函数
+	
+参考：
+https://segmentfault.com/a/1190000003046071
