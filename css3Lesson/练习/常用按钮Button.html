@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Button</title>
+		<style>
+			.btn {
+				width: 200px;
+				height: 36px;
+				background: #008000;
+				text-align: center;
+				text-decoration: none;/*去掉a标签下划线*/
+				display: inline-block; /*把a标签这个行内元素升级为块级元素*/
+				margin: 0 auto;
+				line-height: 36px;  /*行高*/
+				color: #000000;
+				border-radius:3px ;/*圆角*/
+			}
+			
+			.btn:hover{
+				background: #6666FF;
+			} 
+			
+			/*
+			 	inline-block:行内框 不换行，但添加高度宽度起作用
+			 	block:
+			 * */
+		</style>
+	</head>
+
+	<body>
+		<a class="btn" href="#">点击按钮</a>
+	</body>
+
+</html>
