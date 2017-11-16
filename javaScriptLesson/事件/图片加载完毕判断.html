@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>判断图片加载完毕</title>
+	</head>
+	<body>
+		<img id="image" src="../../img/二维码.png" />
+		<script>
+			var img = document.getElementById("image")
+			img.onload = function (){
+				console.log("我已经加载完毕了")
+			}
+		</script>
+	</body>
+</html>

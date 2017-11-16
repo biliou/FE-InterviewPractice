@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>event</title>
+	</head>
+	<body>
+		<input id="btn" type="button" value="按钮" />
+		<a  id="stopBtn" href="DOM事件处理程序.html">我是a标签</a>
+		<script>
+			var btn = document.getElementById("btn");
+			btn.onclick = function(event){
+				
+				console.log(event.currentTarget === this); //true
+				console.log(event.target === this); //true
+				console.log(event.target === btn);
+				
+				//阻止冒泡
+				event.stopPropagation();
+			}
+			
+			var stopBtn = document.getElementById("stopBtn")
+			stopBtn.onclick = function(event) {
+				event.preventDefault();  //阻止默认事件跳转
+			}
+			
+			var body = document.body;
+			body.onclick = function(){
+				console.log("我是body"); 
+			}
+			
+			
+		</script>
+	</body>
+</html>

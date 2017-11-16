@@ -21,13 +21,16 @@
 			}
 
 			function Son() {
-
+				Son.run = function(){        //静态方法
+					console.log("i'm running");
+				}
 			}
 			Son.prototype = new Father(5, 6); //需要在函数外使用
 
 			var son = new Son();
 			son.sayName();
 			son.sayPoint();
+			Son.run();
 
 			console.log(son instanceof Son); //输出 "true"
 			console.log(son instanceof Father); //输出 "true"
