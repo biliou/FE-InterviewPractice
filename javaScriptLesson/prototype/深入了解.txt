@@ -1,0 +1,11 @@
+1.prototype是一个对象，每个js对象都有这个属性。所有实例对象都需要共享的属性和方法，都放在这个对象中。
+	那些不需要共享的属性和方法，就放在构造函数中。
+	
+2.prototype例子 和 es6 中的extend 分别使用原型链实现继承和es6新特性实现继承
+
+3. B.prototype = new A() 和 B.prototype = A 和 B.prototype = A.prototype 区别
+要实现继承，就必须保证B继承A以后，B所做的修改不能影响到A以及继承自A的其它对象。
+
+B.prototype = A =>  两个对象的引用一致。修改属性会把来自A的对象全部改了
+B.prototype = A.prototype => 也是同理，修改B的原型就会直接把A的原型给污染掉。
+B.prototype = new A() => 创建了新的对象，继承A的原型，不是和A同一引用，所以不会污染A。
