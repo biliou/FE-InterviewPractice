@@ -41,3 +41,4 @@ Promise.all([promise1,promise2,promise3]).then((result) =>{
 Promise.resolve():
 Promise.reject('foo')
 
+4.promise底层如何实现

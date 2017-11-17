@@ -1,0 +1,15 @@
+1.json格式的出现原因
+去规范我们的数据格式，数据的解析和分解
+
+2.json格式规则
+对象表示为键值对
+数据由逗号分隔
+花括号保存对象
+方括号保存数组
+
+3.json 和 js 对象互转
+JSON 和 JS 对象互转
+要实现从对象转换为 JSON 字符串，使用 JSON.stringify() 方法：
+var json = JSON.stringify({a: 'Hello', b: 'World'}); //结果是 '{"a": "Hello", "b": "World"}'
+要实现从 JSON 转换为对象，使用 JSON.parse() 方法：
+var obj = JSON.parse('{"a": "Hello", "b": "World"}'); //结果是 {a: 'Hello', b: 'World'}

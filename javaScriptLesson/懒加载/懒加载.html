@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="../jq/jquery.min.js"></script>
+		<script type="text/javascript">
+			//dom加载完之后获取各个容器距离容器顶部的高度  
+			var asyncOffsets = [];
+			$(function() {
+				asyncOffsets = getOffset();
+
+				// 页面加载完毕之后就主动触发一次scroll事件,因为页面顶部可能存在已经进入【可视区域】的元素  
+				$(window).trigger('scroll');
+			});
+
+			// 获取每个div元素的偏移量  
+			function getOffset() {
+				var offsets = [];
+				$("div[async=async]").each(function() {
+					offsets.push($(this).offset().top);
+				});
+				return offsets;
+			}
+
+			// 监听窗口滚动事件  
+			$(window).scroll(function() {
+				// 可视区域高度  
+				var see = $(this).height();
+				// 当前文档整体高度  
+				var scroll = $(document).scrollTop();
+				// 打印  
+				//console.info("可视区域高度：" + see + ";滚动条到顶部的高度：" + scroll);  
+
+				// 如果 (浏览器可视高度 + 当前滚动条高度 > 元素的offsetTop)   
+				// 说明当前元素已经进入【可视区域】  
+				// 对当前进入可视区域的元素：触发一些事件,比如是img标签实现懒加载  
+				// 或者异步加载一些区域的内容  
+
+				// 遍历需要监听【是否已进入可视区域的元素】,据此来触发事件  
+				var current;
+				for (var i = 0; i < asyncOffsets.length; i++) {
+					if (see + scroll > asyncOffsets[i]) {
+						current = $("div[idx=" + (i + 1) + "]");
+
+						// 已经加载过的不再加载  
+						if ("true" == current.attr("isloaded")) {
+							continue;
+						}
+
+						// 控制台打印调试信息  
+						console.info(current.html());
+
+						// 触发异步事件加载内容  
+						loading(i + 1);
+
+						// 一旦被加载过，就不再加载  
+						current.attr("isloaded", "true");
+
+					}
+				}
+
+			});
+
+			// idx 为当前进入可视区域的对象,本例中就是一个div标签  
+			// 可以在初始化整个页面时就为每个div初始化一些参数,这样div在进入可视区域时可以用到这些参数  
+			function loading(idx) {
+				$.ajax({
+					type: 'POST',
+					url: 'http://localhost/ServletJs/LoadServlet',
+					data: {
+						"idx": idx
+					},
+					dataType: 'html',
+					async: true,
+					success: function(msg) {
+						$("div[idx=" + idx + "]").html(msg);
+					}
+				});
+			}
+		</script>
+	</head>
+
+	<body>
+		<div idx="1" async="async" style="height:400px;width:800px;border:1px solid #CCC;">area 1</div>
+		<div idx="2" async="async" style="height:400px;width:800px;border:1px solid #CCC;">area 2</div>
+		<div idx="3" async="async" style="height:400px;width:800px;border:1px solid #CCC;">area 3</div>
+		<div idx="4" async="async" style="height:400px;width:800px;border:1px solid #CCC;">area 4</div>
+		<div idx="5" async="async" style="height:400px;width:800px;border:1px solid #CCC;">area 5</div>
+		<div idx="6" async="async" style="height:400px;width:800px;border:1px solid #CCC;">area 6</div>
+		<div idx="7" async="async" style="height:400px;width:400px;border:1px solid #CCC;float:left;">area 7</div>
+		<div idx="8" async="async" style="height:400px;width:400px;border:1px solid #CCC;float:left;margin-left:20px;">area 8</div>
+		<div idx="9" async="async" style="height:400px;width:800px;border:1px solid #CCC;clear:both;">area 9</div>
+		<div idx="10" async="async" style="height:400px;width:800px;border:1px solid #CCC;">area 10</div>
+	</body>
+
+</html>
