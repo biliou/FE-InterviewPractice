@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM时间处理程序</title>
+
+	</head>
+
+	<body>
+
+		<input id="btn" type="button" value="按钮" />
+		<script>
+			//方式一 注意要等页面DOM渲染完毕才能获取元素
+			var btn = document.getElementById("btn");
+			btn.onclick = function() {
+				console.log("btn.onclick");
+			};
+
+			//方式二 
+			var hander = function() {
+				console.log("btn.addEventListener");
+			};
+			btn.addEventListener("click", hander, false)
+			//解绑事件中的hander要和添加事件的hander一致才生效
+			//btn.removeEventListener("click", hander, false)
+		</script>
+	</body>
+
+</html>

@@ -30,7 +30,7 @@
        因此showNameA()执行的时候相当于window.showNameA(),即window对象调用showNameA这个方法，所以this关键字指向window
 	
 	2.3 作为构造函数来调用
-	unction  Person(name){
+	function  Person(name){
         this.name=name;
     }
     var personA=Person("xl");

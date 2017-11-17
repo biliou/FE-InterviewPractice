@@ -1,0 +1,8 @@
+1.当页面DOM加载完全后使用
+js：window.onload = function(){}   //当页面DOM加载完全后使用,不代表图片加载完毕
+jq: $(document).ready(function(){	//所有资源都加载完成
+  // 在这里写你的代码...
+});
+
+2.DOM加载完成，
+需要使用

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>使用原型链实现继承</title>
+		<script>
+			function Father(x, y) {
+				this.x = x;
+				this.y = y;
+
+				Father.prototype.sayPoint = function() {
+					console.log(this)
+					console.log("x===" + x + ";y===" + y);
+				}
+
+				Father.prototype.sayName = function() {
+					console.log("i'm father");
+				}
+
+			}
+
+			function Son() {
+				Son.run = function(){        //静态方法
+					console.log("i'm running");
+				}
+			}
+			Son.prototype = new Father(5, 6); //需要在函数外使用
+
+			var son = new Son();
+			son.sayName();
+			son.sayPoint();
+			Son.run();
+
+			console.log(son instanceof Son); //输出 "true"
+			console.log(son instanceof Father); //输出 "true"
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>事件委托</title>
+		<style>
+			.bg {
+				background: pink;
+				display: inline-block;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="box">
+			<div id="btn1" class="bg">1</div>
+			<div id="btn2" class="bg">2</div>
+			<div id="btn3" class="bg">3</div>
+		</div>
+
+		<script>
+			var box = document.getElementById("box");
+			box.onclick = function(event) {
+				switch(event.target.id) {
+					case "btn1":
+						console.log("btn1");
+						break;
+					case "btn2":
+						console.log("btn2");
+						break;
+					case "btn3":
+						console.log("btn3");
+						break;
+				}
+			}
+		</script>
+	</body>
+
+</html>
