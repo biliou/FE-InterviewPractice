@@ -1,0 +1,8 @@
+1.什么是浏览器内核
+渲染引擎(Rendering Engine)，负责解析网页语法(如HTML、JavaScript)并渲染、展示网页
+
+目前主流的内核：
+Trident  IE
+Gecko	火狐
+WebKit	Safari，Chrome
+Presto	Opera

@@ -32,8 +32,8 @@ https://zhuanlan.zhihu.com/p/24632196
 请求就是必须遵循某种协议（http）必须请求一个url，如果是http就会需要选择请求方式
 
 6.请求方式
-get
-post
+get 用来请求数据，因而不够安全也存在数据大小限制
+post 用来提交数据，post将数据 存放在HTTP报文体中
 fatch
 put
 detele
