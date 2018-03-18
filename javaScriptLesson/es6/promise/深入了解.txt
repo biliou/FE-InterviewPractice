@@ -15,7 +15,7 @@ var promise = new Promise((resolve, reject) => {
 	if(1 < 2) {
 		resolve("success");  //异步完成成功之后执行
 	} else {
-		resolve("failed");	//异步完成失败之后执行
+		reject("failed");	//异步完成失败之后执行
 	}
 })
 

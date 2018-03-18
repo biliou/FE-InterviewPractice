@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>sort Lv.1</title>
+	</head>
+
+	<body>
+		<p>Q:请用JavaScript 实现sort排序函数，要求：sort([5.100.6.3.-12]) // 返回[-12,3,5,6,100]</p>
+		<script>
+			var arr1 = [5, 100, 6, 3, -12];
+
+			function sort(arrSrc) {
+
+				for (var i = 0; i < arrSrc.length; i++) {
+					var min = i;
+					for (var j = i+1; j < arrSrc.length; j++) {
+						if (arrSrc[min] > arrSrc[j]) {
+							min = j;
+						}
+					}
+
+					if (min != i) {
+						var temp = arrSrc[i];
+						arrSrc[i] = arrSrc[min];
+						arrSrc[min] = temp;
+					}
+				}
+
+				return arrSrc
+			}
+
+			console.log(sort(arr1))
+		</script>
+	</body>
+
+</html>

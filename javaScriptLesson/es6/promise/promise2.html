@@ -9,10 +9,10 @@
 	<body>
 		<script>
 			var promise = new Promise((resolve, reject) => {
-				if(1 < 2) {
+				if(1 > 2) {
 					resolve("success");
 				} else {
-					resolve("failed");
+					reject("failed");
 				}
 			})
 			
